@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <title>Simulador de Grid</title>
+  </head>
+  <body>
+    <div class="estrutura">
+      <form class="controles">
+        <label for="gridTemplateColumns">Colunas</label>
+        <input
+          type="number"
+          min="1"
+          max="9"
+          value="1"
+          name="gridTemplateColumns"
+        />
+        <label for="gridTemplateRows">Linhas</label>
+        <input
+          type="number"
+          min="1"
+          max="9"
+          value="1"
+          name="gridTemplateRows"
+        />
+
+        <fieldset>
+          <legend>Div 1</legend>
+          <label for="ret-1">Coluna</label>
+          <input type="number" min="1" max="9" value="1" name="ret-1" id="gridColumn">
+
+          <label for="ret-1">Linha</label>
+          <input type="number" min="1" max="9" value="1" name="ret-1" id="gridRow">
+        </fieldset>
+      </form>
+
+      <div class="resultado">
+        <div class="grid ret-1"></div>
+        <div class="grid ret-2"></div>
+        <div class="grid ret-3"></div>
+        <div class="grid ret-4"></div>
+        <div class="grid ret-5"></div>
+        <div class="grid ret-6"></div>
+        <div class="grid ret-7"></div>
+        <div class="grid ret-8"></div>
+        <div class="grid ret-9"></div>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="./js/script.js"></script>
+</html>
