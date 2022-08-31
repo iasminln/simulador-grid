@@ -1,6 +1,6 @@
 const controles = document.querySelector(".controles");
 const resultado = document.querySelector(".resultado");
-const grid1 = document.querySelector(".ret-1")
+const grid1 = document.querySelector(".ret1")
 
 controles.addEventListener("change", handleChange);
 
@@ -25,7 +25,17 @@ const selecionarStyle = {
     resultado.style.gridTemplateRows = estilo;
   },
 
-  
+  ret1(value, e) {
+    if(e.target.id === "colInicio" || e.target.id === "colFim"){
+      grid1.style.gridColumn = value;
+    } else {
+      grid1.style.gridRow = value;
+    }
+
+    
+  }
+
+
 };
 
 
@@ -34,7 +44,10 @@ const selecionarStyle = {
 function handleChange(e) {
   const name = e.target.name;
   const value = e.target.value;
+  const teste = e.target.id;
 
-  selecionarStyle[name](value);
+  // console.log(name, value, teste)
+
+  selecionarStyle[name](value, e);
 
 }

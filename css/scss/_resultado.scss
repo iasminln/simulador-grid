@@ -9,4 +9,8 @@
   height: 100vh;
   background-color: rgb(170, 56, 223);
   border: 1px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: font(30);
 }
