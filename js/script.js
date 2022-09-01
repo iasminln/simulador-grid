@@ -1,18 +1,17 @@
 const controles = document.querySelector(".controles");
 const resultado = document.querySelector(".resultado");
-const grid1 = document.querySelector(".ret1");
-const colFim1 = document.querySelector("#colFim")
 
-console.log(colFim1, colFim1.max)
+const colunaInicio = document.querySelectorAll("#colInicio");
+const colunaFim = document.querySelectorAll("#colFim");
+const linhaInicio = document.querySelectorAll("#rowInicio");
+const linhaFim = document.querySelectorAll("#rowFim");
 
 controles.addEventListener("change", handleChange);
 
-let colInicio=1;
-    let colFim=1;
-    let rowInicio=1;
-    let rowFim=1;
-    let maxColumn=1;
-    let maxRow=1;
+let colInicio = 1;
+let colFim = 1;
+let rowInicio = 1;
+let rowFim = 1;
 
 const selecionarStyle = {
   gridTemplateColumns(value) {
@@ -22,8 +21,10 @@ const selecionarStyle = {
       estilo += "1fr ";
     }
 
-    colFim1.max = Number(value) + 1;
- 
+    colunaFim.forEach((item) => {
+      item.max = Number(value) + 1;
+    });
+
     resultado.style.gridTemplateColumns = estilo;
   },
 
@@ -34,44 +35,51 @@ const selecionarStyle = {
       estilo += "1fr ";
     }
 
-    maxRow = value;
+    linhaFim.forEach((item) => {
+      item.max = Number(value) + 1;
+    });
     resultado.style.gridTemplateRows = estilo;
   },
 
-  ret1(value, e) {
-    
-
+  posicao(value, e, pai) {
     switch (e.target.id) {
       case "colInicio":
         colInicio = value;
         break;
       case "colFim":
-       
+        document.querySelector(`#${pai.id} #colInicio`).max = value;
         colFim = value;
+        if (colInicio > colFim) {
+          document.querySelector(`#${pai.id} #colInicio`).value = value;
+          colInicio = value;
+        }
         break;
       case "rowInicio":
         rowInicio = value;
         break;
       case "rowFim":
-        e.target.max = maxRow;
+        document.querySelector(`#${pai.id} #rowInicio`).max = value;
         rowFim = value;
+        if (rowInicio > rowFim) {
+          document.querySelector(`#${pai.id} #rowInicio`).value = value;
+          rowInicio = value;
+        }
         break;
       default:
         break;
     }
 
-    console.log(maxColumn, maxRow)
-    grid1.style.gridColumn = colInicio + "/" + colFim;
-    grid1.style.gridRow = rowInicio + "/" + rowFim;
+    const ret = document.querySelector(`.${pai.id}`);
+
+    ret.style.gridColumn = colInicio + "/" + colFim;
+    ret.style.gridRow = rowInicio + "/" + rowFim;
   },
 };
 
 function handleChange(e) {
   const name = e.target.name;
   const value = e.target.value;
-  const teste = e.target.max;
+  const pai = e.target.parentElement;
 
-  console.log(name, value, teste)
-
-  selecionarStyle[name](value, e);
+  selecionarStyle[name](value, e, pai);
 }

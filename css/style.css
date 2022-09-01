@@ -11,8 +11,63 @@
   font-family: monospace;
 }
 
-label {
+.principal,
+#ret1,
+#ret2,
+#ret3,
+#ret4,
+#ret5,
+#ret6,
+#ret7,
+#ret8,
+#ret9 {
+  border: 1px solid #000;
+  padding: 10px;
+  margin-top: 20px;
+  width: fit-content;
+}
+
+.principal input,
+#ret1 input,
+#ret2 input,
+#ret3 input,
+#ret4 input,
+#ret5 input,
+#ret6 input,
+#ret7 input,
+#ret8 input,
+#ret9 input {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.principal label,
+#ret1 label,
+#ret2 label,
+#ret3 label,
+#ret4 label,
+#ret5 label,
+#ret6 label,
+#ret7 label,
+#ret8 label,
+#ret9 label {
   display: block;
+}
+
+.principal span,
+#ret1 span,
+#ret2 span,
+#ret3 span,
+#ret4 span,
+#ret5 span,
+#ret6 span,
+#ret7 span,
+#ret8 span,
+#ret9 span {
+  font-weight: 900;
+  text-decoration: underline;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 .resultado {
@@ -20,6 +75,7 @@ label {
   max-width: 600px;
   height: 600px;
   border: 2px solid black;
+  padding: 10px;
 }
 
 .grid {
