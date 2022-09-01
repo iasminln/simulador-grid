@@ -1,31 +1,37 @@
-.principal,
-#ret1,
-#ret2,
-#ret3,
-#ret4,
-#ret5,
-#ret6,
-#ret7,
-#ret8,
-#ret9 {
-  border: 1px solid #000;
-  padding: 10px;
-  margin-top: 20px;
-  width: fit-content;
+.controles {
+  display: grid;
+  grid-template-columns: auto auto;
 
-  input {
-    margin-bottom: 10px;
-    margin-top: 5px;
-  }
+  .principal,
+  #ret1,
+  #ret2,
+  #ret3,
+  #ret4,
+  #ret5,
+  #ret6,
+  #ret7,
+  #ret8,
+  #ret9 {
+    border: 1px solid #000;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 175px;
 
-  label {
-    display: block;
-  }
+    input {
+      margin-bottom: 10px;
+      margin-top: 5px;
+    }
 
-  span {
-    font-weight: 900;
-    text-decoration: underline;
-    margin-bottom: 10px;
-    display: inline-block;
+    label {
+      display: block;
+    }
+
+    span {
+      font-weight: 900;
+      text-transform: uppercase;
+      text-decoration: underline;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
   }
 }
