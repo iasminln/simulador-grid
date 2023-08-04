@@ -2,6 +2,8 @@
 
 Página criada para estudo de grid layout, além de algumas funções do javascript. Para um melhor uso, considero interessante manter a ferramenta de desenvolvedor do navegador aberta para poder visualizar as mudanças de grid no código de cada div.
 
+Para acessar o simulador: https://iasminln.github.io/simulador-grid/
+
 Vídeo de exemplo: https://www.awesomescreenshot.com/video/19672348?key=cdafc9a06a573ca435613d3102e37466
 
 Tela inicial: 
